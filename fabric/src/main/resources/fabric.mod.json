@@ -1,0 +1,34 @@
+{
+    "schemaVersion": 1,
+    "id": "mod_id",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "${license}",
+    "icon": "assets/ps/logo.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.arcanc.ps.PortableSpawners"
+        ]
+    },
+    "mixins": [
+        "ps.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "${minecraft_version}",
+        "java": ">=17"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}
+  
