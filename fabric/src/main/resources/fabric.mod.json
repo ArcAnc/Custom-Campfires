@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.arcanc.ps.PortableSpawners"
+            "com.arcanc.cc.CustomCampfires"
         ]
     },
     "mixins": [

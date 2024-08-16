@@ -1,3 +1,3 @@
-# Portable Spawners
+# Custom Campfires
 
-It's simple mod, which allows you to transport your spawners. Just use any instrument with silk touch and magic will happen
+Add more different campfires to game. For each wood types
