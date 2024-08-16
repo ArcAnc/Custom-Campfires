@@ -52,6 +52,7 @@ public class CCBlockStateProvider extends BlockStateProvider
                                 renderType("cutout").
                                 texture("fire", textureFire).
                                 texture("lit_log", textureLogLit).
+                                texture("log", textureLogOff).
                                 texture("particle", textureLogLit);
 
                         ModelFile modelOff = models().withExistingParent(blockPrefix(name(normalCampfire)) + "_off", mcLoc(blockPrefix("campfire_off"))).
@@ -80,29 +81,30 @@ public class CCBlockStateProvider extends BlockStateProvider
                         textureLogOff = ResourceLocation.fromNamespaceAndPath(Database.MOD_ID, blockPrefix(type.name() + "_campfire_log"));
                         textureItemNormal = ResourceLocation.fromNamespaceAndPath(Database.MOD_ID, itemPrefix(type.name() + "_soul_campfire"));
 
-                        ModelFile modelSoulOn = models().withExistingParent(blockPrefix(name(normalCampfire)), mcLoc(blockPrefix("template_campfire"))).
+                        ModelFile modelSoulOn = models().withExistingParent(blockPrefix(name(soulCampfire)), mcLoc(blockPrefix("template_campfire"))).
                                 renderType("cutout").
                                 texture("fire", textureFire).
                                 texture("lit_log", textureLogLit).
+                                texture("log", textureLogOff).
                                 texture("particle", textureLogLit);
 
-                        ModelFile modelSoulOff = models().withExistingParent(blockPrefix(name(normalCampfire)) + "_off", mcLoc(blockPrefix("campfire_off"))).
+                        ModelFile modelSoulOff = models().withExistingParent(blockPrefix(name(soulCampfire)) + "_off", mcLoc(blockPrefix("campfire_off"))).
                                 renderType("cutout").
                                 texture("log", textureLogOff).
                                 texture("particle", textureLogOff);
 
-                        getVariantBuilder(normalCampfire).forAllStates(state ->
+                        getVariantBuilder(soulCampfire).forAllStates(state ->
                         {
                             Direction facing = state.getValue(CampfireBlock.FACING);
                             boolean lit = state.getValue(CampfireBlock.LIT);
 
                             ConfiguredModel.Builder<?> builder = ConfiguredModel.builder();
 
-                            builder.rotationY(90 * facing.get2DDataValue()).modelFile(lit ? modelOn : modelOff);
+                            builder.rotationY(90 * facing.get2DDataValue()).modelFile(lit ? modelSoulOn : modelSoulOff);
 
                             return builder.build();
                         });
-                        itemModels().withExistingParent(itemPrefix(name(normalCampfire)), itemPrefix("generated")).
+                        itemModels().withExistingParent(itemPrefix(name(soulCampfire)), itemPrefix("generated")).
                                 texture("layer0", textureItemNormal);
 
                     }

@@ -32,9 +32,9 @@ public class CCEnUsLangProvider extends LanguageProvider
             {
                 String typeName = type == WoodType.DARK_OAK ?
                         type.name().substring(0, 1).toUpperCase() + type.name().replace("_o", " O").substring(1) :
-                        type.name().substring(0, 1).toUpperCase() + type.name().substring(1).toUpperCase();
+                        type.name().substring(0, 1).toUpperCase() + type.name().substring(1).toLowerCase();
                 this.add(obj.getNormalCampfire().get(), typeName + " Campfire");
-                this.add(obj.getSoulCampfire().get(), typeName + "Soul Campfire");
+                this.add(obj.getSoulCampfire().get(), typeName + " Soul Campfire");
             }
         });
     }

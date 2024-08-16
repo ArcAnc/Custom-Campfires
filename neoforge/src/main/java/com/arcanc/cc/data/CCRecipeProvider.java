@@ -171,14 +171,25 @@ public class CCRecipeProvider extends RecipeProvider
                 .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.JUNGLE.getSoulCampfire().get())
-                .define('L', ItemTags.JUNGLE_LOGS)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.DARK_OAK.getSoulCampfire().get())
+                .define('L', ItemTags.DARK_OAK_LOGS)
                 .define('S', Items.STICK)
                 .define('#', ItemTags.SOUL_FIRE_BASE_BLOCKS)
                 .pattern(" S ")
                 .pattern("S#S")
                 .pattern("LLL")
                 .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.JUNGLE.getNormalCampfire().get())
+                .define('L', ItemTags.JUNGLE_LOGS)
+                .define('S', Items.STICK)
+                .define('C', ItemTags.COALS)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("LLL")
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.JUNGLE.getSoulCampfire().get())
@@ -189,6 +200,17 @@ public class CCRecipeProvider extends RecipeProvider
                 .pattern("S#S")
                 .pattern("LLL")
                 .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.MANGROVE.getNormalCampfire().get())
+                .define('L', ItemTags.MANGROVE_LOGS)
+                .define('S', Items.STICK)
+                .define('C', ItemTags.COALS)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("LLL")
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.MANGROVE.getSoulCampfire().get())
@@ -201,14 +223,15 @@ public class CCRecipeProvider extends RecipeProvider
                 .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
                 .save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.SPRUCE.getSoulCampfire().get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.SPRUCE.getNormalCampfire().get())
                 .define('L', ItemTags.SPRUCE_LOGS)
                 .define('S', Items.STICK)
-                .define('#', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                .define('C', ItemTags.COALS)
                 .pattern(" S ")
-                .pattern("S#S")
+                .pattern("SCS")
                 .pattern("LLL")
-                .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.SPRUCE.getSoulCampfire().get())
@@ -221,14 +244,15 @@ public class CCRecipeProvider extends RecipeProvider
                 .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
                 .save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.WARPED.getSoulCampfire().get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.WARPED.getNormalCampfire().get())
                 .define('L', ItemTags.WARPED_STEMS)
                 .define('S', Items.STICK)
-                .define('#', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                .define('C', ItemTags.COALS)
                 .pattern(" S ")
-                .pattern("S#S")
+                .pattern("SCS")
                 .pattern("LLL")
-                .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Registration.BlockRegister.WARPED.getSoulCampfire().get())

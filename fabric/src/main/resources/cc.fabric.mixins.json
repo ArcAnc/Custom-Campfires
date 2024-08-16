@@ -4,7 +4,9 @@
   "package": "com.arcanc.cc.mixin",
   "refmap": "${mod_id}-refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "BEHook"
+  ],
   "client": [
   ],
   "server": [],

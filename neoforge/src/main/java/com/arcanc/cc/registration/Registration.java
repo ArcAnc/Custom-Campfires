@@ -18,12 +18,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Supplier;
 
 public class Registration
 {
@@ -34,7 +39,7 @@ public class Registration
 
         public static void init(@NotNull final IEventBus modEventBus)
         {
-            modEventBus.register(ITEMS);
+            ITEMS.register(modEventBus);
         }
     }
 
@@ -83,7 +88,7 @@ public class Registration
 
         private static @NotNull CampfireRegObject register(@NotNull WoodType type)
         {
-           return new CampfireRegObject(type, BlockDatabase.getNormalByWoodType(type), BlockDatabase.getSoulByWoodType(type));
+           return new CampfireRegObject(type, () -> BlockDatabase.getNormalByWoodType(type), () -> BlockDatabase.getSoulByWoodType(type));
         }
 
         public static class CampfireRegObject
@@ -92,13 +97,13 @@ public class Registration
             private final DeferredHolder<Block, CampfireBlock> NORMAL;
             private final DeferredHolder<Block, CampfireBlock> SOUL;
 
-            private CampfireRegObject(@NotNull WoodType type, CampfireBlock normal, CampfireBlock soul)
+            private CampfireRegObject(@NotNull WoodType type, Supplier<CampfireBlock> normal, Supplier<CampfireBlock> soul)
             {
                 this.type = type;
-                NORMAL = BLOCKS.register(type.name() + "_campfire", () -> normal);
-                ItemRegister.ITEMS.register(type.name() + "_campfire", () -> new BlockItem(normal, new Item.Properties()));
-                SOUL = BLOCKS.register("soul_" + type.name() + "_campfire", () -> soul);
-                ItemRegister.ITEMS.register("soul_" + type.name() + "_campfire", () -> new BlockItem(soul, new Item.Properties()));
+                NORMAL = BLOCKS.register(type.name() + "_campfire", normal);
+                ItemRegister.ITEMS.register(type.name() + "_campfire", () -> new BlockItem(normal.get(), new Item.Properties()));
+                SOUL = BLOCKS.register("soul_" + type.name() + "_campfire", soul);
+                ItemRegister.ITEMS.register("soul_" + type.name() + "_campfire", () -> new BlockItem(soul.get(), new Item.Properties()));
             }
 
             private CampfireRegObject (Block campfireBlock, Block soulCampfireBlock)
@@ -126,7 +131,7 @@ public class Registration
 
         public static void init(@NotNull final IEventBus modEventBus)
         {
-            modEventBus.register(BLOCKS);
+            BLOCKS.register(modEventBus);
         }
     }
 
