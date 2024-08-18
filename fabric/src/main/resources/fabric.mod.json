@@ -11,16 +11,16 @@
         "sources": "https://github.com/ArcAnc/Custom-Campfires/issues"
     },
     "license": "${license}",
-    "icon": "assets/cc/logo.png",
+    "icon": "assets/bc/logo.png",
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.arcanc.cc.CustomCampfires"
+            "com.arcanc.bc.BeautifulCampfires"
         ]
     },
     "mixins": [
-        "cc.mixins.json",
-        "cc.fabric.mixins.json"
+      "bc.mixins.json",
+      "bc.fabric.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.14",

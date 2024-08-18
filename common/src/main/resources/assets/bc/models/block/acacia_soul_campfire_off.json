@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/campfire_off",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "log": "bc:block/acacia_campfire_log",
+    "particle": "bc:block/acacia_campfire_log"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/campfire_off",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "log": "cc:block/dark_oak_campfire_log",
-    "particle": "cc:block/dark_oak_campfire_log"
-  }
-}
