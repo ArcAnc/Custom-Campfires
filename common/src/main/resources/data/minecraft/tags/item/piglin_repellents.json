@@ -1,14 +1,14 @@
 {
   "values": [
-    "cc:soul_spruce_campfire",
-    "cc:soul_birch_campfire",
-    "cc:soul_acacia_campfire",
-    "cc:soul_cherry_campfire",
-    "cc:soul_jungle_campfire",
-    "cc:soul_dark_oak_campfire",
-    "cc:soul_crimson_campfire",
-    "cc:soul_warped_campfire",
-    "cc:soul_mangrove_campfire",
-    "cc:soul_bamboo_campfire"
+    "bc:spruce_soul_campfire",
+    "bc:birch_soul_campfire",
+    "bc:acacia_soul_campfire",
+    "bc:cherry_soul_campfire",
+    "bc:jungle_soul_campfire",
+    "bc:dark_oak_soul_campfire",
+    "bc:crimson_soul_campfire",
+    "bc:warped_soul_campfire",
+    "bc:mangrove_soul_campfire",
+    "bc:bamboo_soul_campfire"
   ]
 }

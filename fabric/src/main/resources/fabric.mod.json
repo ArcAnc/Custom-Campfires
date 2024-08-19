@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.arcanc.cc.CustomCampfires"
+            "com.arcanc.bc.BeautifulCampfires"
         ]
     },
     "mixins": [

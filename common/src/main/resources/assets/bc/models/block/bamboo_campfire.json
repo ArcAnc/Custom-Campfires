@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_campfire",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "fire": "minecraft:block/campfire_fire",
+    "lit_log": "bc:block/bamboo_campfire_log_lit",
+    "log": "bc:block/bamboo_campfire_log",
+    "particle": "bc:block/bamboo_campfire_log_lit"
+  }
+}
