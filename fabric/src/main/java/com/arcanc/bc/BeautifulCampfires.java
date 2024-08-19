@@ -3,6 +3,7 @@ package com.arcanc.bc;
 import com.arcanc.bc.content.BlockDatabase;
 import com.arcanc.bc.content.Blocks;
 import com.arcanc.bc.mixin.BEHook;
+import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
@@ -53,7 +54,7 @@ public class BeautifulCampfires implements ModInitializer
                 }).
                 collect(Collectors.toSet());
         newBlocks.addAll(currentBlocks);
-        ((BEHook) be).setValidBlocks(newBlocks);
+        ((BEHook) be).setValidBlocks(ImmutableSet.copyOf(newBlocks));
 
         BlockRenderLayerMapImpl.INSTANCE.putBlocks(RenderType.cutout(), WoodType.values().
                 filter(type -> type != WoodType.OAK).

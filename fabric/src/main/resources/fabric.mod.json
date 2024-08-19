@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "mod_id",
+    "id": "${mod_id}",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -19,8 +19,7 @@
         ]
     },
     "mixins": [
-      "bc.mixins.json",
-      "bc.fabric.mixins.json"
+      "bc.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.14",
